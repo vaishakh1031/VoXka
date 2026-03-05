@@ -1,4 +1,4 @@
-##Voxka – Kannada Emotional Text-to-Speech (TTS)
+# Voxka – Kannada Emotional Text-to-Speech (TTS)
 
 Voxka is a Kannada emotional text-to-speech system built on top of the open-source Parler-TTS architecture.
 The project extends Parler-TTS by integrating emotion embeddings to generate expressive Kannada speech.
@@ -19,7 +19,7 @@ Based on open-source Parler-TTS
 
 Extendable to new voices and emotions
 
-#Architecture
+## Architecture
 Kannada Text
       │
       ▼
@@ -42,7 +42,7 @@ Speech Output
 
 Parler-TTS generates speech tokens autoregressively using a transformer architecture and converts them to waveform audio.
 
-#Repository Structure
+## Repository Structure
 voxka-kannada-tts/
 │
 ├── dataset/
@@ -66,7 +66,7 @@ voxka-kannada-tts/
 │   └── emotion_encoder.py
 │
 └── README.md
-#Installation
+## Installation
 1. Clone Parler-TTS
 git clone https://github.com/huggingface/parler-tts.git
 cd parler-tts
@@ -91,7 +91,7 @@ pip install soundfile
 pip install numpy
 pip install accelerate
 
-#Optional logging:
+## Optional logging:
 
 pip install wandb
 Download Base TTS Model
@@ -111,7 +111,7 @@ tokenizer = AutoTokenizer.from_pretrained(
 
 These pretrained checkpoints are trained on thousands of hours of speech data and support style-controlled voice generation.
 
-Adding Kannada Support
+## Adding Kannada Support
 Step 1 — Kannada Text Normalization
 
 Convert raw Kannada text to normalized text.
@@ -131,7 +131,7 @@ Example mapping:
 ತ → ta
 ನ → na
 
-#Output:
+### Output:
 
 ನಮಸ್ಕಾರ
 → na ma ska ra
@@ -148,7 +148,7 @@ angry
 excited
 calm
 
-#Emotion vectors are stored as:
+## Emotion vectors are stored as:
 
 emotion_vectors/
 emotion_embeddings.npy
@@ -180,7 +180,7 @@ combined_embedding = torch.cat(
 
 The merged embedding is then passed into the Parler-TTS decoder.
 
-#Training Voxka
+## Training Voxka
 
 Run training script:
 
@@ -189,7 +189,7 @@ python scripts/train.py \
 --emotion_vectors emotion_vectors/emotion_embeddings.npy \
 --output models/voxka
 
-#Training pipeline:
+## Training pipeline:
 
 Audio + Transcript
         │
@@ -206,7 +206,7 @@ Emotion Vector Merge
 Parler-TTS Training
 Running Inference
 
-#Example script:
+### Example script:
 
 import torch
 import soundfile as sf
@@ -221,7 +221,7 @@ audio = model.generate(text, emotion)
 sf.write("output.wav", audio, 22050)
 Example Usage
 
-Input
+### Input
 
 Text: ನಮಸ್ಕಾರ
 Emotion: happy
@@ -229,7 +229,7 @@ Emotion: happy
 Output
 
 Expressive Kannada speech
-Future Improvements
+## Future Improvements
 
 Custom Kannada voice dataset
 
@@ -241,7 +241,7 @@ Real-time TTS inference
 
 Web API for Voxka
 
-References
+## References
 
 Parler-TTS GitHub repository
 
