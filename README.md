@@ -45,26 +45,47 @@ Parler-TTS generates speech tokens autoregressively using a transformer architec
 ## Repository Structure
 voxka-kannada-tts/
 │
+
 ├── dataset/
+
 │   ├── audio/
+
 │   ├── transcripts/
+
 │   └── emotion_labels.csv
+
 │
+
 ├── emotion_vectors/
+
 │   └── emotion_embeddings.npy
+
 │
+
 ├── models/
+
 │   └── parler_tts_kannada/
+
 │
+
 ├── scripts/
+
 │   ├── train.py
+
 │   ├── infer.py
+
 │   ├── preprocess.py
+
 │
+
 ├── utils/
+
 │   ├── phoneme_converter.py
+
 │   └── emotion_encoder.py
+
 │
+
 └── README.md
 ## Installation
 1. Clone Parler-TTS
